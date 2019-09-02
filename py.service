@@ -9,7 +9,6 @@ WorkingDirectory=/home/cyc/Public
 ExecStart=/usr/bin/python -m SimpleHTTPServer 8000
 Restart=on-abort
 
-
 [Install]
 WantedBy=multiuser.target
 
