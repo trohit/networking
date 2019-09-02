@@ -1,0 +1,24 @@
+[Unit]
+Description= A python web service listening at port 8000
+After=network.target
+
+[Service]
+Type=simple
+User=cyc
+WorkingDirectory=/home/cyc/Public
+ExecStart=/usr/bin/python -m SimpleHTTPServer 8000
+Restart=on-abort
+
+
+[Install]
+WantedBy=multiuser.target
+
+# sits in /etc/systemd/system/py.service
+# inspired by: 
+# https://gist.github.com/funzoneq/737cd5316e525c388d51877fb7f542de
+# https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
+
+## commands
+# sudo systemctl daemon-reload
+# sudo systemctl start py
+# sudo systemctl stop py
